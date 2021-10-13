@@ -1,2 +1,10 @@
+require 'gocardless_pro'
 class ApplicationController < ActionController::Base
-end
+    def initialize
+      super
+      @client = GoCardlessPro::Client.new(
+        access_token: ENV['GC_ACCESS_TOKEN'],
+        environment: :sandbox
+      )
+    end
+  end
