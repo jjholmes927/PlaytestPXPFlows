@@ -15,8 +15,9 @@ class RedirectFlowController < ApplicationController
         begin
         redirect_flow = @client.redirect_flows.create(
             params: {
+		        scheme: "bacs",
                 session_token: @session_token,
-                success_redirect_url: 'http://localhost:3000/redirectflow/success'
+		        success_redirect_url: 'http://localhost:3000/redirectflow/success',
             }
         )
 
@@ -28,7 +29,7 @@ class RedirectFlowController < ApplicationController
     end
     
     def success
-        @client.redirect_flows.complete(params[:redirect_flow_id], params: { session_token: @session_token })      
+	    @client.redirect_flows.complete(params[:redirect_flow_id], params: { session_token: @session_token })      
     end
     
 end

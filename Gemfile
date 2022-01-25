@@ -5,6 +5,8 @@ ruby '3.0.2'
 
 gem "gocardless_pro", "~> 2.28.0"
 
+
+gem 'pry', '~> 0.13.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.1'
 # Use sqlite3 as the database for Active Record
